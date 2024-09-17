@@ -10,9 +10,15 @@ namespace TheatricalPlayersRefactoringKata.Application.Services
 {
     public class ComedyCalc : ITypeCalc
     {
-        public string CalculatePerformance(Performance performance)
+        public int CalculatePerformance(Performance performance)
         {
-            throw new NotImplementedException();
+            var thisAmount = 0;
+            if (performance.Audience > 20)
+            {
+                thisAmount += 10000 + 500 * (performance.Audience - 20);
+            }
+            thisAmount += 300 * performance.Audience;
+            return thisAmount;
         }
     }
 }

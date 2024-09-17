@@ -10,9 +10,21 @@ namespace TheatricalPlayersRefactoringKata.Application.Services
 {
     public class HistoryCalc : ITypeCalc
     {
-        public string CalculatePerformance(Performance performance)
+        public int CalculatePerformance(Performance performance)
         {
-            throw new NotImplementedException();
+            var thisAmount = 0;
+            if (performance.Audience > 20)
+            {
+                thisAmount += 10000 + 500 * (performance.Audience - 20);
+            }
+            thisAmount += 300 * performance.Audience;
+
+            if (performance.Audience > 30)
+            {
+                thisAmount += 1000 * (performance.Audience - 30);
+            }
+
+            return thisAmount;
         }
     }
 }

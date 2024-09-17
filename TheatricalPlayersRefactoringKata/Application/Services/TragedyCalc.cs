@@ -10,9 +10,16 @@ namespace TheatricalPlayersRefactoringKata.Application.Services
 {
     public class TragedyCalc : ITypeCalc
     {
-        public string CalculatePerformance(Performance performance)
+        public int CalculatePerformance(Performance performance)
         {
-            throw new NotImplementedException();
+            var thisAmount = 0;
+            if (performance.Audience > 30)
+            {
+                thisAmount += 1000 * (performance.Audience - 30);
+            }
+
+            return thisAmount;
+
         }
     }
 }
