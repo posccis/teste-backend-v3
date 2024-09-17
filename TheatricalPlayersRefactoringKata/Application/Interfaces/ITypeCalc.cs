@@ -9,6 +9,6 @@ namespace TheatricalPlayersRefactoringKata.Application.Interfaces
 {
     public interface ITypeCalc
     {
-        string CalculatePerformance(Performance performance);
+        int CalculatePerformance(Performance performance);
     }
 }
